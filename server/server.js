@@ -11,6 +11,10 @@ const app = express();
 app.use(cors({ origin: '*' }));
 app.use(express.json());
 
+app.get('/', (req, res) => {
+  res.json({ status: 'OK', message: 'Railway Water Level Monitoring Server Running' });
+});
+
 app.use('/api', deviceRoutes);
 app.use('/api', fleetRoutes);
 

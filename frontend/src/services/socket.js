@@ -1,10 +1,14 @@
 import { io } from 'socket.io-client';
 
+const SOCKET_URL = typeof window !== 'undefined' && (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')
+  ? '/'
+  : 'https://railway-wli-backend.onrender.com';
+
 let socket = null;
 
 export const connectSocket = () => {
   if (!socket) {
-    socket = io('/', {
+    socket = io(SOCKET_URL, {
       transports: ['websocket', 'polling']
     });
 

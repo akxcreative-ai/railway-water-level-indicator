@@ -1,5 +1,9 @@
 // api.js
-const BASE_URL = '/api';
+const BACKEND_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+  ? '' 
+  : 'https://railway-wli-backend.onrender.com';
+
+const BASE_URL = `${BACKEND_URL}/api`;
 
 const getAuthToken = () => {
   return localStorage.getItem('wli_auth_token') || 'railway-wli-prototype-token-2026';

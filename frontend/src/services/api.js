@@ -1,7 +1,7 @@
 // api.js
 const BACKEND_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
   ? '' 
-  : 'https://railway-wli-backend.onrender.com';
+  : 'https://railway-water-level-indicator.onrender.com';
 
 const BASE_URL = `${BACKEND_URL}/api`;
 
